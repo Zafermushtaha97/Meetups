@@ -1,32 +1,90 @@
+<!--<template>-->
+<!--  <div>-->
+<!--    <v-app>-->
+<!--      <v-card>-->
+<!--        <v-toolbar app class="red accent-3"  dark>-->
+<!--          <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>-->
+<!--          <v-toolbar-title>MeetUp-->
+<!--          </v-toolbar-title>-->
+<!--          <v-spacer></v-spacer>-->
+<!--          <v-btn class="hidden-xs-only"-->
+<!--                 text-->
+<!--                 v-for="item in menuitems"-->
+<!--                 :key="item.title"-->
+<!--          >-->
+<!--            <v-icon left dark>{{ item.icon }}</v-icon>-->
+<!--            {{ item.title }}-->
+<!--          </v-btn>-->
+<!--        </v-toolbar>-->
+<!--      </v-card>-->
+
+<!--      <main>-->
+<!--        <router-view></router-view>-->
+<!--      </main>-->
+<!--    <v-navigation-drawer v-model="drawer" absolute temporary>-->
+<!--      <v-list>-->
+<!--        <v-list-item v-for="item in menuitems"-->
+<!--                     :key="item.title">-->
+<!--          <v-list-item-icon>-->
+<!--            <v-icon>{{ item.icon }}</v-icon>-->
+<!--          </v-list-item-icon>-->
+<!--          <v-list-item-content>-->
+<!--            <v-list-item-title>{{ item.title }}</v-list-item-title>-->
+<!--          </v-list-item-content>-->
+<!--        </v-list-item>-->
+<!--      </v-list>-->
+<!--    </v-navigation-drawer>-->
+<!--    </v-app>-->
+<!--  </div>-->
+<!--</template>-->
+<!--<script>-->
+
+<!--  export default {-->
+<!--    name: 'navbar',-->
+<!--    components: {-->
+<!--    },-->
+<!--    data(){-->
+<!--      return{-->
+<!--        drawer: false,-->
+<!--        menuitems:[-->
+<!--          {title:'View Meetup',icon:'mdi-account-supervisor'},-->
+<!--          {title:'Organize Meetups',icon:'mdi-map-marker'},-->
+<!--          { title: 'Profile',icon: 'mdi-account-box' },-->
+<!--          {title: 'Sign up' , icon: 'mdi-account-edit-outline' },-->
+<!--          { title: 'Sign in',icon: 'mdi-login' }-->
+
+
+<!--        ]-->
+
+<!--      }-->
+<!--    },-->
+<!--  };-->
+<!--</script>-->
+
+
+
+
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app>
+    <Navbar/>
+<!--      <router-view></router-view>-->
+  </v-app>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+  import Navbar from '@/components/Navbar'
+  export default {
+    name: 'App',
 
-#nav {
-  padding: 30px;
+    components: {
+      Navbar
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+    },
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+    data: () => ({
+      //
+    }),
+  };
+</script>
+
+
